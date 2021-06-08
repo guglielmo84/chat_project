@@ -1,0 +1,37 @@
+PROTOCOLLO
+
+CLIENT - SERVER
+
+1) Richiesta di connessione al client
+    CONN | <client_name>
+
+2) Richiesta di registrazione
+    REG | <my_name> | <my_IP> | <my_PORT>
+
+3) Risposta: La registrazione è andata a buon fine 
+    200 | OK
+
+5) Risposta: La richiesta di registrazione ha causato un conflitto
+    403 | CONFLICT
+
+4) Risposta: La richiesta di connessione è avvenuta con successo
+    200 | OK | <client_IP> | <client_PORT>
+
+5) Risposta: Il client richiesto non è in archivio
+    404 | NOT FOUND
+
+
+
+
+PEER - PEER
+1) Richiesta di inizio chat
+    START_CHAT | <my_name>
+
+1) Richiesta di fine chat
+    END_CHAT
+
+2) Risposta: La richiesta di inizio/fine chat è avvenuta con successo
+    600 | OK
+    
+2) Risposta: Il client UDP è occupato
+    700 | BUSY
